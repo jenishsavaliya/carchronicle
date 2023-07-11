@@ -1,6 +1,7 @@
 "use client";
 import { Dialog, Transition } from "@headlessui/react";
 import { CarProps } from "@types";
+import { generateCarImageUrl } from "@utils";
 import Image from "next/image";
 import { Fragment } from "react";
 
@@ -54,7 +55,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                   <div className="flex-1 flex flex-col gap-3">
                     <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
                       <Image
-                        src="/hero1.png"
+                        src={generateCarImageUrl(car) || "/hero1.png"}
                         alt="car model"
                         fill
                         priority
@@ -64,7 +65,16 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                     <div className="flex gap-3 ">
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero1.png"
+                          src={generateCarImageUrl(car, "29") || "/hero1.png"}
+                          alt="car model"
+                          fill
+                          priority
+                          className="object-contain"
+                        />
+                      </div>
+                      <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg top-4">
+                        <Image
+                          src={generateCarImageUrl(car, "33") || "/hero1.png"}
                           alt="car model"
                           fill
                           priority
@@ -73,16 +83,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero1.png"
-                          alt="car model"
-                          fill
-                          priority
-                          className="object-contain"
-                        />
-                      </div>
-                      <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                        <Image
-                          src="/hero1.png"
+                          src={generateCarImageUrl(car, "13") || "/hero1.png"}
                           alt="car model"
                           fill
                           priority
