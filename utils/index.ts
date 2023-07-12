@@ -59,4 +59,5 @@ export const UpdateSearchParams = (title: string, value: string) => {
 export interface ShowMoreProps {
   pageNumber: number;
   isNext: boolean;
+  setLimit: (limit: number) => void;
 }
